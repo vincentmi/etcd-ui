@@ -6,48 +6,120 @@
 <%template "header"%>
 
 
-<div id="app">
-    <h1>{{ greeting }}</h1>
-    <ul>
-        <li>
-            To learn more about Vue, visit
-            <a :href="docsURL" target="_blank">
-                \{{ humanizeURL(docsURL) }}
-            </a>
-        </li>
-        <li>
-            For live help with simple questions, check out
-            <a :href="gitterURL" target="_blank">
-                the Gitter chat
-            </a>
-        </li>
-        <li>
-            For more complex questions, post to
-            <a :href="forumURL" target="_blank">
-                the forum
-            </a>
-        </li>
-    </ul>
+
+<nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">
+    <button class="navbar-toggler navbar-toggler-right hidden-lg-up" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="#">配置中心</a>
+
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link selector-env" data-env="dev"  href="#">DEV</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link selector-env" data-env="qa" href="#">QA</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link selector-env" data-env="prod" href="#">PROD</a>
+            </li>
+        </ul>
+        <form class="form-inline mt-2 mt-md-0">
+            <input class="form-control mr-sm-2" type="text" placeholder="key">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Query</button>
+        </form>
+    </div>
+</nav>
+
+<div class="container-fluid">
+    <div class="row">
+        <nav class="col-sm-3 col-md-2 hidden-xs-down bg-faded sidebar">
+            <ul class="nav nav-pills flex-column">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">staff <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">vip</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">medsvr</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">mvp</a>
+                </li>
+            </ul>
+
+        </nav>
+
+        <main class="col-sm-9 offset-sm-3 col-md-10 offset-md-2 pt-3 main">
+
+           <div class="row">
+               <div class="col-sm-3">
+                    <div class="card text-center ">
+                        <div class="card-block">
+                            <h4 class="card-title">accunt</h4>
+                            <p class="card-text"></p>
+                            <a href="#" class="btn btn-primary">配置</a>
+                        </div>
+                    </div>
+               </div>
+
+               <div class="col-sm-3">
+                   <div class="card text-center ">
+                       <div class="card-block">
+                           <h4 class="card-title">accunt</h4>
+                           <p class="card-text"></p>
+                           <a href="#" class="btn btn-primary">配置</a>
+                       </div>
+                   </div>
+               </div>
+
+               <div class="col-sm-3">
+                   <div class="card text-center ">
+                       <div class="card-block">
+                           <h4 class="card-title">accunt</h4>
+                           <p class="card-text"></p>
+                           <a href="#" class="btn btn-primary">配置</a>
+                       </div>
+                   </div>
+               </div>
+
+               <div class="col-sm-3">
+                   <div class="card text-center ">
+                       <div class="card-block">
+                           <h4 class="card-title">accunt</h4>
+                           <p class="card-text"></p>
+                           <a href="#" class="btn btn-primary">配置</a>
+                       </div>
+                   </div>
+               </div>
+
+               <div class="col-sm-3">
+                   <div class="card text-center ">
+                       <div class="card-block">
+                           <h4 class="card-title">accunt</h4>
+                           <p class="card-text"></p>
+                           <a href="#" class="btn btn-primary">配置</a>
+                       </div>
+                   </div>
+               </div>
+            </div>
+
+        </main>
 </div>
 
-<script>
-    new Vue({
-        el: '#app',
-        data: {
-            greeting: 'Welcome to your Vue.js <%.%> app!',
-            docsURL: 'http://vuejs.org/guide/',
-            gitterURL: 'https://gitter.im/vuejs/vue',
-            forumURL: 'http://forum.vuejs.org/'
-        },
-        methods: {
-            humanizeURL: function (url) {
-                return url
-                    .replace(/^https?:\/\//, '')
-                    .replace(/\/$/, '')
-            }
-        }
-    })
-</script>
+
+    <script>
+
+        $('.selector-env').click(function(){
+
+            alert($(this).attrs('data-env'))
+
+        })
+
+
+    </script>
 
 
 <%template "footer"%>

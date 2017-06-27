@@ -64,6 +64,7 @@ func main() {
 	e.Use(middleware.Logger())
 	e.Use(middleware.Recover())
 	e.Static("/js" , "public/js")
+	e.Static("/css" , "public/css")
 
 	// Route => handler
 	e.GET("/", func(c echo.Context) error {
